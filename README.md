@@ -10,30 +10,28 @@ It adds baseline calibration, noise smoothing (EMA filter), and easy async integ
 
 ## ⭐️ Features
 
-- 🔧 Automatic baseline calibration (with auto-tuning if touch locks)  
-- 📉 Exponential Moving Average (EMA) filtering for stable detection  
-- 🎚️ Adjustable touch threshold  
-- ✨ Gesture detection: single click, double click, long press  
-- 🚫 Option to disable double-click for instant single-click behavior  
-- 🔄 Fully async design for use with `asyncio`
+- Automatic baseline calibration (with auto-tuning if touch locks)  
+- Exponential Moving Average (EMA) filtering for stable detection  
+- Adjustable touch threshold  
+- Gesture detection: single click, double click, long press  
+- Option to disable double-click for instant single-click behavior  
+- Fully async design for use with `asyncio`
 
 ## ⚡️ Dependencies
 
 - ✅ CircuitPython 8 or newer **recommended**  
-- 📦 Libraries required:
+- 📦 Libraries required ([Download from CircuitPython.org](https://circuitpython.org/libraries)):
   - `asyncio`
   - `adafruit_ticks`
-
-📥 [Download from CircuitPython.org](https://circuitpython.org/libraries)
 
 ## 📦 How to Install
 
 Choose one of the following:
 
-### 🗂 Source code version  
+### Source code version  
 Copy `touch_button.py` to your `CIRCUITPY/lib/` folder.
 
-### ⚡️ Compiled version  
+### Compiled version  
 Copy `touch_button.mpy` to your `lib/` folder — optimized to be smaller and faster.
 
 ## 🧩 Quick Example
@@ -89,13 +87,13 @@ asyncio.run(main())
 |----------------------------------|-------------|
 | `set_touch_threshold(value)`     | Adjust sensitivity for your sensor |
 | `set_double_click_delay(seconds)`| Set double-click window (e.g. 0.4 = 400ms) |
-| `set_long_press_timeout(seconds)`| Define how long a press is considered "long" |
-| `disable_double_click_detection()`| Instantly detect single touches |
-| `set_debug(True)`                | Log raw/smoothed data for fine-tuning |
+| `set_long_press_timeout(seconds)`| Define how long a press is considered (e.g. 2 = 2000ms) |
+| `disable_double_click_detection()`| Instantly detect single touches. This disables the ability to detect double-clicks! |
+| `set_debug(True)`                | print raw smoothed values and baseline to the console to help you find the optimal threshold for your project's setup |
 
 ## 💡 Why Use TouchButton?
 
-- ✅ Native touch support in CircuitPython is raw and noisy  
-- 🔍 TouchButton adds filtering, calibration, and gesture detection in one easy class  
-- 🧠 Designed for capacitive pads, conductive paint, foil sensors, and more  
+- Native touch support in CircuitPython is raw and noisy  
+- TouchButton adds filtering, calibration, and gesture detection in one easy class  
+- Designed for capacitive pads, conductive paint, foil sensors, and more  
 

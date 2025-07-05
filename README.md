@@ -43,19 +43,42 @@ import board
 import asyncio
 from touch_button import TouchButton
 
-button = TouchButton(board.A1)
+TOUCH_PIN = board.IO5
+
+button = TouchButton(TOUCH_PIN)
 button.set_touch_threshold(300)
+button.set_long_press_timeout(1.0)
 button.set_double_click_delay(0.4)
 button.disable_double_click_detection()
+button.set_debug(False)
 
 def on_click():
-    print("Click detected!")
+    print("Single Click detected!")
+
+def on_double_click():
+    print("Double Click detected!")
+
+def on_long_press():
+    print("Long Press detected!!")
 
 button.register_callback("clk", on_click)
+button.register_callback("dclk", on_double_click)
+button.register_callback("lpr", on_long_press)
+
+async def my_main():
+    while True:
+        print("My custom code is running...")
+        await asyncio.sleep(10)
 
 async def main():
+    print("Calibrating touch button...")
     await button.calibrate()
-    await button.monitor_button()
+    print("Calibration done. Starting tasks...")
+    
+    await asyncio.gather(
+        button.monitor_button(),
+        my_main()
+    )
 
 asyncio.run(main())
 ```

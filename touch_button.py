@@ -17,7 +17,7 @@ class TouchButton:
     def __init__(self, touch_pin: board.Pin):
         self.touch = touchio.TouchIn(touch_pin)
         self._smoothed_raw_value = 0
-        self._ema_alpha = 0.1                       # Smoothing factor for EMA filter
+        self._ema_alpha = 0.3                       # Smoothing factor for EMA filter
         self._baseline = 0
         self._baseline_approx_factor = 0.0005
         self._touch_threshold = 500

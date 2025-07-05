@@ -47,7 +47,7 @@ button = TouchButton(TOUCH_PIN)
 button.set_touch_threshold(300)
 button.set_long_press_timeout(1.0)
 button.set_double_click_delay(0.4)
-button.disable_double_click_detection()
+# button.disable_double_click_detection()
 button.set_debug(False)
 
 def on_click():

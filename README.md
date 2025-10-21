@@ -2,9 +2,10 @@
 
 **TouchButton** is a robust, async-friendly CircuitPython class/library that turns any `touchio.TouchIn` pin into a smart button supporting:
 
-- ✅ Single Click  
-- ✅ Double Click  
-- ✅ Long Press  
+- ✅ Single Click
+- ✅ Double Click
+- ✅ Long Press
+- ✅ Long Press Hold (fires repeatedly while holding)
 
 It adds baseline calibration, noise smoothing (EMA filter), and easy async integration, making raw capacitive inputs truly usable in real-world projects.
 
@@ -13,7 +14,8 @@ It adds baseline calibration, noise smoothing (EMA filter), and easy async integ
 - Automatic baseline calibration (with auto-tuning if touch locks)  
 - Exponential Moving Average (EMA) filtering for stable detection  
 - Adjustable touch threshold  
-- Gesture detection: single click, double click, long press  
+- Gesture detection: single click, double click, long press 
+- Long press hold with configurable fire interval for continuous actions 
 - Option to disable double-click for instant single-click behavior  
 - Fully async design for use with `asyncio`
 

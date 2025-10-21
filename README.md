@@ -85,13 +85,16 @@ asyncio.run(main())
 
 ## 🛠️ Tuning Options
 
-| Method                           | Description |
-|----------------------------------|-------------|
-| `set_touch_threshold(value)`     | Adjust sensitivity for your sensor |
-| `set_double_click_delay(seconds)`| Set double-click window (e.g. 0.4 = 400ms) |
-| `set_long_press_timeout(seconds)`| Define how long a press is considered (e.g. 2 = 2000ms) |
-| `disable_double_click_detection()`| Instantly detect single touches. This disables the ability to detect double-clicks! |
-| `set_debug(True)`                | print raw smoothed values and baseline to the console to help you find the optimal threshold for your project's setup |
+| Method | Description |
+|--------------------------------------|-------------|
+| `set_touch_threshold(value)` | Adjust sensitivity for your sensor |
+| `set_double_click_delay(seconds)` | Set double-click window (e.g. 0.4 = 400ms) |
+| `set_long_press_timeout(seconds)` | Define how long a press is considered long (e.g. 1.0 = 1000ms) |
+| `set_long_press_hold_interval(seconds)` | Set how often `lprhld` callback fires while holding (e.g. 0.02 = every 20ms) |
+| `disable_double_click_detection()` | Instantly detect single touches. This disables the ability to detect double-clicks! |
+| `enable_double_click_detection()` | Re-enable double-click detection |
+| `set_debug(True)` | Print raw smoothed values and baseline to the console to help you find the optimal threshold for your project's setup |
+
 
 ## 💡 Why Use TouchButton?
 
